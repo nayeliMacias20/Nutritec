@@ -1,0 +1,39 @@
+//Cards
+.card1 ion-card {
+  width: 90%;
+  height: 150%;
+}
+.card1 ion-card-title {
+  font: 5px;
+  margin-top:5px;
+  text-align:center;
+}
+ion-item {
+  --padding-start: 0;
+}
+ion-card-header.ios {
+  display: flex;
+  flex-flow: column-reverse;
+}
+ion-icon {
+  margin-left: 15px;
+  width: 250px;
+  height: 100px;
+}
+//Calorias
+.caloriasR{
+  font-size: 20px;
+  font-weight:bold;
+  margin-left: 20px;
+}
+.caloriasR1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+//Botones
+.botons ion-icon {
+  margin-left: 15px;
+  width: 50px;
+  height: 50px;
+}

@@ -1,0 +1,15 @@
+ion-content.background{
+    --background: linear-gradient(90deg, rgb(250, 182, 86) 0%, rgb(255, 208, 146) 50%, rgb(250, 182, 86) 100%,rgb(255, 208, 146) 50%, rgb(250, 182, 86) 100%);   
+}
+.new-background{
+    --background:orange;
+}
+ion-toolbar {
+    width: 100%;
+}
+ion-searchbar{
+    width: 100%;
+}
+.atras{
+    --background:none;
+}

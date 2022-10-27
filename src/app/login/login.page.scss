@@ -1,0 +1,44 @@
+.fondo{
+    margin: 0;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.no-scroll{
+    overflow: hidden;
+}
+.logo{
+    width: 50%;
+    display: block;
+    margin: auto;
+    margin-top:25%;
+}
+ion-input{
+    margin-top: 3%;
+    border-radius: 37px 37px 37px 37px;
+    -moz-border-radius: 37px 37px 37px 37px;
+    -webkit-border-radius: 37px 37px 37px 37px;
+    border: 0px solid #000000;
+    background: rgb(139, 137, 137);
+}
+ion-label{
+    color:black;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 25%;
+}
+.contenedor{
+    border-color:antiquewhite;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.mostrar{
+    display: block;
+}
+.ocultar{
+    display: none;
+}

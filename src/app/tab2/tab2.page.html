@@ -1,0 +1,50 @@
+
+<ion-content [fullscreen]="true" class="background">
+  <div>
+    <div class="header">
+      <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide>
+          <ion-img src="../../assets/header.jpg"></ion-img>
+        </ion-slide>
+        <ion-slide>
+          <ion-img src="../../assets/header1.jpg"></ion-img>
+        </ion-slide>
+        <ion-slide>
+          <ion-img src="../../assets/header2.jpg"></ion-img>
+        </ion-slide>
+      </ion-slides>
+      <!--<h1 class="bienvenido">Bienvenido {{userService.userName}}!</h1>-->
+    </div>
+    <!--<div *ngFor="let usuarios of userService.usuarios;let i=index">
+      <ion-item  *ngIf="userService.usuarios.length>=1">
+      <ion-label>Categoria</ion-label>
+      <ion-select placeholder="Filter">
+        <ion-select-option value="f">marca</ion-select-option>
+        <ion-select-option value="m">precio</ion-select-option>
+      </ion-select>
+    </ion-item>
+    </div>-->
+    
+    <div class="cards" *ngFor="let usuarios of userService.usuarios;">
+      <ion-item  *ngIf="userService.usuarios.length>=1">
+        <ion-card class="card1" (click)="presentModal()">
+          {{this.obtenerProductos.usuarios.color}}
+          <!--<img src="../assets/Texanablanca.jpg">-->
+            </ion-card>
+        <ion-card class="card2" (click)="presentModal()">
+          <img src="../assets/Texanablanca.jpg">
+          </ion-card>
+        <ion-card class="card3" (click)="presentModal()">
+          <img src="../assets/Texanablanca.jpg">
+        </ion-card>
+        <ion-card class="card4" (click)="presentModal()">
+          <img src="../assets/Texanablanca.jpg">
+        </ion-card></ion-item>
+        
+      
+    </div>
+</div>
+</ion-content>
+
+
+  
