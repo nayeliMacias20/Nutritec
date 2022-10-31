@@ -1,9 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
 import { ActionSheetController } from '@ionic/angular';
 import { ModalController} from '@ionic/angular';
 import { AdminService } from '../servicios/admin.service';
-import { Tab4Page } from '../tab4/tab4.page';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -11,59 +10,43 @@ import { Tab4Page } from '../tab4/tab4.page';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-  constructor(public router:Router,
-    public actionSheetController:ActionSheetController,
+
+  handlerMessage = '';
+  constructor(public alertController: AlertController,
     public modalController: ModalController,
     public userService:AdminService) {}
-  colors = ['red', 'green', 'blue', 'yellow'];
   
   autocomplete: { input: string; };
+  //Mandamos a llamar la información que tenemos en la base de datos de las dietas
   ngOnInit() {
-    this.userService.obtenerProductos();
+    this.userService.obtenerUsers();
   }
 
-  //Metodo de cambiar
-  tab3(){
-    this.router.navigate(['/tabs/tab3'])
-  }
-  tab1(){
-    this.router.navigate(['/tabs/tab1'])
-  }
-  async presentActionSheet() {
-    const actionSheet = await this.actionSheetController.create({
-      header: 'TexApp',
-      cssClass: 'my-custom-class',
-      buttons: [{
-        text: 'Comprar',
-        icon: 'card-outline',
-        handler: () => {
-          console.log('Play clicked');
-          this.tab3();
-        }
-      }, {
-        text: 'Favorite',
-        icon: 'heart',
-        handler: () => {
-          console.log('Favorite clicked');
-        }
-      }, {
-        text: 'Cancel',
-        icon: 'close',
-        role: 'cancel',
-        handler: () => {
-          console.log('Cancel clicked');
-        }
-      }]
+  async Alert() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Important message',
+      message: '¿Estas seguro de agregar esta deliciosa opción?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            this.handlerMessage = 'Alert canceled';
+          },
+        },
+        {
+          text: 'OK',
+          role: 'confirm',
+          handler: () => {
+            this.handlerMessage = 'Alert confirmed';
+          },
+        },
+      ],
     });
-    await actionSheet.present();
+    await alert.present();
   }
-  async presentModal() {
-    const modal = await this.modalController.create({
-      component: Tab4Page,
-      cssClass: 'my-custom-class'
-    });
-    return await modal.present();
-  }
+
   updateSearchResults() {
     console.log(this.autocomplete.input)    //search input will display
   }

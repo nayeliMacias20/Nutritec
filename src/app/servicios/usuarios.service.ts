@@ -8,7 +8,7 @@ export class UsuariosService {
   usuarios:any;
   respuesta:any
   usuario:any
-  urlPeticionNode = "http://localhost:9000/api/";
+  urlPeticionNode = "http://localhost:8080/api/";
 
   constructor(public httpClient:HttpClient) { 
     this.usuarios=[]  
@@ -36,7 +36,8 @@ export class UsuariosService {
     )
   }
 
-  eliminarUsuario(){
+  eliminarUsuario() {
+    this.httpClient.delete
     
   }
   actulizarUsuario(){

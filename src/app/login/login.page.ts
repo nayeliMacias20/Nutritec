@@ -44,7 +44,7 @@ export class LoginPage implements OnInit {
           0 admin
           */
           if(this.userService.usuarios[i].tipo==0){
-            this.router.navigate(['/tabs/tab1-ad'])
+            this.router.navigate(['/tabs/tab1'])
           }else if(this,this.userService.usuarios[i].tipo==1){
             this.router.navigate(['/tabs/tab1'])
           }

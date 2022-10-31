@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\node-esqueleto",
+    "\\node-esqueleto\\server",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\home",
     "\\src\\app\\login",
-    "\\src\\app\\tab1",
+    "\\src\\app\\servicios",
     "\\src\\app\\tab2",
-    "\\src\\app\\tabs",
-    "\\src\\assets",
-    "\\src\\assets\\icon",
-    "\\src\\theme"
+    "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\app\\tab2\\tab2.page.html",
+  "SelectedNode": "\\src\\app\\servicios\\admin.service.ts",
   "PreviewInSolutionExplorer": false
 }

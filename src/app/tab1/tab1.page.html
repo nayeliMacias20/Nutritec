@@ -1,26 +1,64 @@
 <ion-content>
-  <div>
-    <ion-card class="card1">
-      <ion-card-header>
-        <ion-card-title>Bienvenido de nuevo</ion-card-title>
-        <ion-card-subtitle>Nombre del cliente</ion-card-subtitle>
-      </ion-card-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Bienvenido denuevo</ion-card-title>
+      <ion-card-subtitle>@Name</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      Aqui tienes tu resumen diario.
+    </ion-card-content>
+
+    <ion-list>
       <ion-item>
-        <ion-icon name="person-circle"></ion-icon>
-        <ion-card-content>
-          Here's a small text description for the card content. Nothing more, nothing less.
-        </ion-card-content>
+        <ion-text color="secondary">
+          <h3>Calorias Restantes:</h3>
+        </ion-text>
+
+        <p>@Conteo</p>
+
       </ion-item>
-    </ion-card>
-  </div>
-  <div>
-    <h2 class="caloriasR">Calorías Restantes:</h2>
-    <h2 class="caloriasR1">Calorías Consumidas:</h2>
-  </div>
-  <div>
-    <ion-button small color="light">
-      <p>Desayuno</p>
-      <ion-icon class="botons" name="add-circle"></ion-icon>
-    </ion-button>
-  </div>
+
+      <ion-item>
+        <ion-text color="secondary">
+          <h3>Calorias Consumidas:</h3>
+        </ion-text>
+
+        <p>@Conteo</p>
+
+      </ion-item>
+      <ion-button class="buttona" expand="block" fill="outline" (click)="tab1ad()">
+        Desayuno
+        <ion-icon slot="end" name="add-circle-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button class="buttona" expand="block" fill="outline" (click)="tab2()">
+        Comida
+        <ion-icon slot="end" name="add-circle-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button class="buttona" expand="block" fill="outline">
+        Cena
+        <ion-icon slot="end" name="add-circle-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button class="buttona" expand="block" fill="outline">
+        Colaciones / Otros
+        <ion-icon slot="end" name="add-circle-outline"></ion-icon>
+      </ion-button>
+
+      <ion-item>
+        <ion-text color="medium">
+          <h3>Objetivo de hoy</h3>
+        </ion-text>
+      </ion-item>
+
+      <ion-item>
+        <p>@Objetivo</p>
+      </ion-item>
+
+    </ion-list>
+  </ion-card>
+
 </ion-content>

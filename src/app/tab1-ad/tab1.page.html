@@ -1,55 +1,24 @@
-<ion-header [translucent]="true" class="background">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      <center><ion-icon name="person-outline"></ion-icon>Administrador</center>
-    </ion-title>
+    <ion-title>Desayunos</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar show-clear-button="always" clear-icon="trash-bin" value="Custom Clear Icon"  placeholder="Búsqueda de alimentos"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="background">
-  <div>
-    <center><ion-title><img src="../../assets/logo.png" style="width: 40px;"> TexApp</ion-title></center>
+<ion-content>
+  <div class="dietas" *ngFor="let usuarios of userService.usuarios;">
+    <ion-item *ngIf="userService.usuarios.length>=1">
+      <ion-card class="card1" (click)="Alert()">
+        {{usuarios.nombre}}
+      </ion-card>
+    </ion-item>
+
+    <!--<ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  -->
   </div>
-  <ion-card>
-  <ion-item >
-    <ion-icon name="analytics-outline"></ion-icon>
-    <ion-label>VENTAS</ion-label>
-  </ion-item>
-  <ion-list> 
-    <ion-item >
-    <li>
-      <p>Articulo:</p><br>
-      <p>Ventas:</p><br>
-    </li>
-    </ion-item>
-  </ion-list>
-</ion-card>
-
-<ion-card>
-  <ion-item >
-    <ion-icon name="book-outline"></ion-icon>
-    <ion-label>CATALOGO RAPIDO</ion-label>
-  </ion-item>
-  <ion-list> 
-    <ion-item>
-      <li>
-      <p>Articulo</p><br>
-      <p>Marca</p><br>
-      <p>Precio</p><br>
-      <p>Imagen</p><br>
-    </li>
-    </ion-item>
-  </ion-list>
-</ion-card>
-
-<ion-card>
-  <ion-item>
-    <ion-icon name="cash-outline"></ion-icon>
-    <ion-label>Ingreso Total</ion-label>
-    <ion-item>
-      <p>$$$</p><br>
-    </ion-item>
-  </ion-item>
-</ion-card>
-
 </ion-content>

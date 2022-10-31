@@ -18,10 +18,10 @@ export class AppComponent {
         }*/
         this.userService.usuarios= user;
         if(user.tipoUser==0){
-          this.router.navigate(['/tabs/tab1-ad']);
+          this.router.navigate(['/home']);
         }
         if(user.tipoUser==1){
-          this.router.navigate(['/tabs/tab1']);
+          this.router.navigate(['/home']);
         }
         
       }else{

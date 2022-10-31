@@ -8,7 +8,7 @@ export class VentasService {
   ventas:any;
   respuesta:any
   venta:any
-  urlPeticionNode = "http://localhost:3000/api/ventas/";
+  urlPeticionNode = "http://localhost:9000/api/";
 
   constructor(public httpClient:HttpClient) { 
     this.ventas=[]

@@ -16,15 +16,19 @@ export class Tab1Page {
   mostrar:boolean;
   valor:string
   constructor(public router:Router,
-    public alertController:AlertController,
-    public userService:AdminService) {
+    public alertController: AlertController,
+    public userService: AdminService) {
       this.mostrar=true;
       this.valor=''
  } 
- ngOnInit() {
-  this.userService.obtenerProductos();
+  ngOnInit() {
+    this.userService.obtenerUsers();
   }
- tab2(){
-   this.router.navigate(['/tabs/tab2'])
- }
+
+ tab1ad(){
+   this.router.navigate(['/tabs/tab1-ad'])
+  }
+  tab2() {
+    this.router.navigate(['/tabs/tab2'])
+  }
 }

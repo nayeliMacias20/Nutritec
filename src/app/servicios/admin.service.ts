@@ -8,7 +8,7 @@ export class AdminService {
   usuarios:any;
   respuesta:any
   usuario:any
-  urlPeticionNode = "http://localhost:3000/api/products/";
+  urlPeticionNode = "http://localhost:8080/api";
 
   constructor(public httpClient:HttpClient) {
     this.usuarios=[]  
@@ -17,7 +17,7 @@ export class AdminService {
   }
 
 
-  obtenerProductos(){
+  obtenerUsers(){
     this.httpClient.get(this.urlPeticionNode).subscribe(
       res=>{
         this.usuarios= res

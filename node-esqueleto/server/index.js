@@ -6,7 +6,7 @@ const myconn = require('express-myconnection')
 //Inicializaciones
 const app = express()
 const routes = require('./routes')
-app.set('port', process.env.PORT || 9000)
+app.set('port', process.env.PORT || 8080)
 
 const dbOptions = {
   //Host
