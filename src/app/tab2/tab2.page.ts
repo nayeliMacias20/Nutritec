@@ -19,7 +19,7 @@ export class Tab2Page {
   autocomplete: { input: string; };
   //Mandamos a llamar la información que tenemos en la base de datos de las dietas
   ngOnInit() {
-    this.userService.obtenerUsers();
+    this.userService.obtenerDiets();
   }
 
   async Alert() {

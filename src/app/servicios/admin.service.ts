@@ -5,23 +5,23 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AdminService {
-  usuarios:any;
+  dietas:any;
   respuesta:any
-  usuario:any
-  urlPeticionNode = "http://localhost:8080/api";
+  dieta:any
+  urlPeticionNode = "http://localhost:8090/api";
 
-  constructor(public httpClient:HttpClient) {
-    this.usuarios=[]  
+  constructor(public httpClient: HttpClient) {
+    this.dietas = []
     this.respuesta=[]
-    this.usuario={}
+    this.dieta={}
   }
 
 
-  obtenerUsers(){
+  obtenerDiets(){
     this.httpClient.get(this.urlPeticionNode).subscribe(
       res=>{
-        this.usuarios= res
-        console.log(this.usuarios)
+        this.dietas= res
+        console.log(this.dietas)
       },
       err=>{
         console.log("Hubo un error",err)
@@ -29,15 +29,15 @@ export class AdminService {
     )
   }
 
-  agregarProducto(){
-    this.httpClient.post(this.urlPeticionNode,this.usuario).subscribe(
-      res=>{
-        this.respuesta=res;
-      }
-    )
-  }
+  //agregarProducto(){
+  //  this.httpClient.post(this.urlPeticionNode,this.usuario).subscribe(
+  //    res=>{
+  //      this.respuesta=res;
+  //    }
+  //  )
+  //}
 
-  borrarProducto(){
-    this.httpClient.delete
-  }
+  //borrarProducto(){
+  //  this.httpClient.delete
+  //}
 }

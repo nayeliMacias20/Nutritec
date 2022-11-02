@@ -1,15 +1,14 @@
-const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const express = require('express')
+const routes = express.Router()
+const { Schema } = express;
 
-const ProductSchema = new Schema({
-    Clave: { type: Number, required: true },
-    Tipo: { type: String, required: true },
-    Marca: { type : String, required: true },
-    Color: { type : String, required: true },
-    Talla: { type : String, required: true },
-    Precio: { type : Number, required: true },
-    Cantidad:{ type : Number, required: true }
+const DietsSchema = new Schema({
+  id: { type: String, required: true },
+  name: { type: String, required: true },
+  description: { type: String, required: true },
+  kcal: { type: Number, required: true },
+  count: { type: Number, required: true }
 
 });
 
-module.exports = mongoose.model('Products', ProductSchema);
+module.exports = express.model('Diets', DietsSchema);

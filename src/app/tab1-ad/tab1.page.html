@@ -3,22 +3,24 @@
     <ion-title>Desayunos</ion-title>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-searchbar show-clear-button="always" clear-icon="trash-bin" value="Custom Clear Icon"  placeholder="Búsqueda de alimentos"></ion-searchbar>
+    <ion-searchbar show-clear-button="always" clear-icon="trash-bin" value="Custom Clear Icon" placeholder="Búsqueda de alimentos"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="dietas" *ngFor="let usuarios of userService.usuarios;">
-    <ion-item *ngIf="userService.usuarios.length>=1">
+  <div class="diets" *ngFor="let dietas of adminService.dietas;">
+    <ion-item *ngIf="adminService.dietas.length>=1">
       <ion-card class="card1" (click)="Alert()">
-        {{usuarios.nombre}}
+        {{dietas.id}}
+        {{dietas.name}}
+        {{dietas.description}}
       </ion-card>
     </ion-item>
 
     <!--<ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
-    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
-    </ion-infinite-scroll-content>
-  </ion-infinite-scroll>
-  -->
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    -->
   </div>
 </ion-content>

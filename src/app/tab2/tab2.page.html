@@ -8,10 +8,10 @@
 </ion-header>
 
 <ion-content>
-  <div class="comidas" *ngFor="let usuarios of userService.usuarios;">
-    <ion-item *ngIf="userService.usuarios.length>=1">
+  <div class="comidas" *ngFor="let dietas of adminService.dietas;">
+    <ion-item *ngIf="adminService.dietas.length>=1">
       <ion-card class="card1" (click)="Alert()">
-        {{usuarios.nombre}}
+        {{dietas.id}}
       </ion-card>
     </ion-item>
 

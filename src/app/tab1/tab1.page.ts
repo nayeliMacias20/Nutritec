@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { AdminService } from '../servicios/admin.service';
+import { UsuariosService } from '../servicios/usuarios.service';
 
 @Component({
   selector: 'app-tab1',
@@ -17,12 +17,12 @@ export class Tab1Page {
   valor:string
   constructor(public router:Router,
     public alertController: AlertController,
-    public userService: AdminService) {
+    public userService: UsuariosService) {
       this.mostrar=true;
       this.valor=''
  } 
   ngOnInit() {
-    this.userService.obtenerUsers();
+    this.userService.obtenerUsuarios();
   }
 
  tab1ad(){

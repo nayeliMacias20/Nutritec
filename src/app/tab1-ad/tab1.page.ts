@@ -13,12 +13,12 @@ import { AlertController } from '@ionic/angular';
 export class Tab1Page {
 
   handlerMessage = '';
-  constructor(public userService: AdminService,
+  constructor(public adminService: AdminService,
   public modalController: ModalController, public alertController: AlertController) { }
   autocomplete: { input: string; };
   //Mandamos a llamar la información que tenemos en la base de datos de las dietas
   ngOnInit() {
-    this.userService.obtenerUsers();
+    this.adminService.obtenerDiets();
   }
 
   async Alert() {
