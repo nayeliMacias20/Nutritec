@@ -1,0 +1,86 @@
+<ion-header collapse="condense">
+  <ion-toolbar class="new-background"> 
+    <ion-searchbar color="light">
+      <ion-button (click)="dismiss()" class="atras"><ion-icon name="arrow-back-circle-outline" ></ion-icon>
+    </ion-button>
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" class="background">
+  <div>
+    <div class="header">
+      <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide>
+          <ion-img src="../../assets/header.jpg"></ion-img>
+        </ion-slide>
+        <ion-slide>
+          <ion-img src="../../assets/header1.jpg"></ion-img>
+        </ion-slide>
+        <ion-slide>
+          <ion-img src="../../assets/header2.jpg"></ion-img>
+        </ion-slide>
+      </ion-slides>
+      <!--<h1 class="bienvenido">Bienvenido {{userService.userName}}!</h1>-->
+    </div>
+    <div class="card">
+      <ion-card class="card1">
+        <img src="../assets/Texanablanca.jpg">
+          <p class="precio">Precio:</p>
+          <ion-card-title>$1800</ion-card-title>
+          <p class="marca">Marca:</p>
+          <ion-card-subtitle>WRANGLER</ion-card-subtitle>
+          <p class="desc">Descripcion:</p>
+          <ion-button class="mas1" (click)="tab3()"><ion-icon name="add-circle-outline"></ion-icon></ion-button>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
+
+css
+
+ion-content.background{
+    --background: linear-gradient(90deg, rgb(250, 182, 86) 0%, rgb(255, 208, 146) 50%, rgb(250, 182, 86) 100%,rgb(255, 208, 146) 50%, rgb(250, 182, 86) 100%);   
+}
+.new-background{
+    --background:orange;
+}
+ion-toolbar {
+    width: 100%;
+}
+ion-searchbar{
+    width: 100%;
+}
+.atras{
+    --background:none;
+}
+
+ts
+
+ async presentActionSheet() {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'TexApp',
+      cssClass: 'my-custom-class',
+      buttons: [{
+        text: 'Comprar',
+        icon: 'card-outline',
+        handler: () => {
+          console.log('Play clicked');
+          this.tab3();
+        }
+      }, {
+        text: 'Cancel',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }]
+    });
+    await actionSheet.present();
+  }
+  dismiss() {
+    // using the injected ModalController this page
+    // can "dismiss" itself and optionally pass back data
+    this.modalCtrl.dismiss({
+      'dismissed': true
+    });

@@ -1,0 +1,151 @@
+<ion-header collapse="condense">
+  <ion-toolbar class="new-background">
+    <ion-searchbar color="light">
+      <ion-button (click)="tab2()" class="atras"><ion-icon name="arrow-back-circle-outline" ></ion-icon>
+    </ion-button>
+     </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" class="background">
+  <div class="header">
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide>
+        <ion-img src="../../assets/header.jpg"></ion-img>
+      </ion-slide>
+      <ion-slide>
+        <ion-img src="../../assets/header1.jpg"></ion-img>
+      </ion-slide>
+      <ion-slide>
+        <ion-img src="../../assets/header2.jpg"></ion-img>
+      </ion-slide>
+    </ion-slides>
+    <img class="visa" src="../../assets/visa.png">
+  </div>
+  <div class="list">
+    <ion-list>
+      <ion-item class="Clave">
+        <ion-label position="stacked"><ion-icon name="apps-outline"></ion-icon> Clave:</ion-label>
+        <ion-input [(ngModel)] ="clave"></ion-input>
+      </ion-item>
+      <ion-item class="Color">
+        <ion-label position="stacked"><ion-icon name="apps-outline"></ion-icon> Color:</ion-label>
+        <ion-select placeholder="Selecciona el color deseado:"[(ngModel)] ="color">
+          <ion-select-option value="Negra">Negra</ion-select-option>
+          <ion-select-option value="Blanca">Blanca</ion-select-option>
+          <ion-select-option value="Cafe">Cafe</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="Talla">
+        <ion-label position="stacked"><ion-icon name="apps-outline"></ion-icon> Talla:</ion-label>
+        <ion-select placeholder="Selecciona la talla deseada:"  [(ngModel)] ="talla">
+          <ion-select-option value="Negra">ch</ion-select-option>
+          <ion-select-option value="Blanca">md</ion-select-option>
+          <ion-select-option value="Cafe">g</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="NumTarjeta">
+        <ion-label position="stacked"><ion-icon name="wallet-outline"></ion-icon> Núm Tarjeta:</ion-label>
+        <ion-input [(ngModel)] ="numtarjeta"></ion-input>
+      </ion-item>
+      <ion-item class="Nombrec">
+        <ion-label position="stacked"><ion-icon name="person-outline"></ion-icon> Nombre completo:</ion-label>
+        <ion-input [(ngModel)] ="nombrec"></ion-input>
+      </ion-item>
+      <ion-item class="Domicilio">
+        <ion-label position="stacked"><ion-icon name="home-outline"></ion-icon> Domicilio:</ion-label>
+        <ion-input [(ngModel)] ="domicilio"></ion-input>
+      </ion-item>
+      <ion-item class="Cantidad">
+        <ion-label position="stacked"><ion-icon name="call-outline"></ion-icon> Cantidad:</ion-label>
+        <ion-input [(ngModel)] ="cantidad"></ion-input>
+      </ion-item>
+      <!--<ion-item>
+        <ion-textarea placeholder="Alguna sugerencia de envio..."></ion-textarea>
+      </ion-item>-->
+    </ion-list>
+    <ion-item>
+      <ion-button class="venta" (click)="ventaProduct()">
+        <ion-icon name="bag-add-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <!--<ion-button class="listo" (click)="presentActionSheet()"><ion-icon name="checkmark-circle-outline"></ion-icon></ion-button>-->
+  </div><!--FINAL DE CARDS-->
+  <!--<h1 class="bienvenido">Bienvenido {{userService.userName}}!</h1>-->
+<!--<ion-button (click)="newPage()">Ir a NewPage</ion-button>-->
+
+TS.
+
+  
+  clave:string
+  color:string
+  talla:string
+  cantidad: number
+  numtarjeta:number
+  nombrec : string
+  domicilio: string
+
+
+async presentActionSheet() {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'TexApp',
+      cssClass: 'my-custom-class',
+      buttons: [{
+        text: 'Regresar',
+        icon: 'arrow-back-circle-outline',
+        handler: () => {
+          console.log('Play clicked');
+          this.tab2();
+        }
+      }, {
+        text: 'Ver pedido',
+        icon: 'qr-code-outline',
+        handler: () => {
+          console.log('Favorite clicked');
+        }
+      }, {
+        text: 'Cancel',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }]
+    });
+    await actionSheet.present();
+  }
+  async ventaProduct(){
+    if(this.clave==null || this.color==null || this.talla==null || this.numtarjeta ==null|| this.nombrec==null || this.domicilio ==null || this.cantidad==null){
+      const alert = await this.alertController.create({
+        cssClass: 'my-custom-class',
+        header: 'Error',
+        message: 'Completar los datos necesarios',
+        buttons: ['Ok']
+      })
+      await alert.present();
+    }else{
+      
+      this.ventasService.venta.clave=this.clave;
+      this.ventasService.venta.color="negro";
+      this.ventasService.venta.talla=this.talla;
+      this.ventasService.venta.numtarjeta=this.numtarjeta;
+      this.ventasService.venta.nombrec=this.nombrec;
+      this.ventasService.venta.domicilio=this.domicilio;
+      this.ventasService.venta.cantidad=this.cantidad;
+      console.log(this.ventasService.venta);
+      this.ventasService.createVenta()
+      const alert = await this.alertController.create({
+        cssClass: 'my-custom-class',
+        header: '',
+        message: 'Venta Exitosa',
+        buttons: ['Ok']
+        });
+        await alert.present();
+        
+      this.clave=null;
+      this.color=null;
+      this.talla=null;
+      this.numtarjeta=null;
+      this.nombrec=null;
+      this.domicilio=null;
+      this.cantidad=null;
+    }}

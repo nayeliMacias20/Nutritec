@@ -1,15 +1,63 @@
-ion-content.background{
-    --background: linear-gradient(90deg, rgb(250, 182, 86) 0%, rgb(255, 208, 146) 50%, rgb(250, 182, 86) 100%,rgb(255, 208, 146) 50%, rgb(250, 182, 86) 100%);   
+* {
+  font-family: 'AmiriQuran';
 }
-.new-background{
-    --background:orange;
+ion-searchbar {
+  margin-top: 6%;
 }
-ion-toolbar {
-    width: 100%;
+ion-icon {
+  font-size: 30px;
+  color: dimgrey;
+  margin: 3%;
 }
-ion-searchbar{
-    width: 100%;
+ion-title {
+//background: #c5d4c8;
+  color: black;
+  margin-top: 50px;
+  margin-left:35px;
+  text-align: center;
 }
-.atras{
-    --background:none;
+ion-icon.profile {
+  height: 100px;
+  width: 120px;
+  margin-top:30px;
+  margin-right:25%;
+  color:black;
+}
+
+ion-list {
+  margin-top: 80px;
+}
+
+ion-label.editaru {
+  font-size: 25px;
+  margin-top: 25%;
+  margin-left: 25%;
+}
+
+ion-button.editar {
+  margin-left: 20%;
+  margin-top: 2%;
+  color: white;
+  --background: #A93226;
+}
+
+ion-button.eliminar {
+  margin-left: 17%;
+  margin-top: 2%;
+  color: white;
+  --background: #A93226;
+}
+
+ion-button.cancelar {
+  margin-left: 30%;
+  margin-top: 2%;
+  color: white;
+  --background: #A93226;
+}
+
+ion-button.guardar {
+  margin-left: 17%;
+  margin-top: 2%;
+  color: white;
+  --background: #A93226;
 }

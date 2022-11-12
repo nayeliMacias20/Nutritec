@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+      <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+  <div>
+  <ion-list> 
+    <ion-item>
+      <li>
+      <p>Tipo</p><br>
+      <p>Marca</p><br> 
+      <p>Color</p><br>
+      <p>Talla</p><br>
+      <p>Existencia</p><br>      
+      <ion-button color="primary" style="width: 100%; height: 30px;" (click)="UsuarioService.borrar()">BORRAR</ion-button>
+    </li>
+    </ion-item>
+  </ion-list>
+</div>
+
+</ion-content>

@@ -1,16 +1,15 @@
 <ion-content>
   <div class="fondo no-scroll" padding>
-    <!--<h2>{{valor}}</h2>-->
     <img class="logo" src="../../assets/logo.png" alt="AppFitness">
-    <h2>Bienvenido</h2>
     <div class="contenedor">
+      <h2>Bienvenido</h2>
       <form *ngIf="mostrar==true" [ngClass]="mostrar==true?'mostrar':'ocultar'">
-        <ion-label><ion-icon name="person-outline"></ion-icon>Email</ion-label>
+        <ion-label><ion-icon name="person-outline"></ion-icon> Email</ion-label>
         <ion-input [(ngModel)]="user" name="user"></ion-input>
-        <ion-label><ion-icon name="key-outline"></ion-icon>Contraseña</ion-label>
+        <ion-label><ion-icon name="key-outline"></ion-icon> Contraseña</ion-label>
         <ion-input type="password" [(ngModel)]="pass" name="pass"></ion-input>
-        <ion-button color="dark" (click)="iniciarSesion()">Login</ion-button>
-        <ion-button color="dark" style="float: right;" (click)="showInfo(false)"><ion-icon name="add-circle-outline"></ion-icon></ion-button>
+        <ion-button color="dark" (click)="iniciarSesion()">Log In</ion-button>
+        <ion-button color="dark" style="float: right;" (click)="showInfo(false)">Register</ion-button>
       </form>
 
       <form *ngIf="mostrar==false" [ngClass]="mostrar==false?'mostrar':'ocultar'">
@@ -20,6 +19,7 @@
         <ion-input type="email" [(ngModel)]="email" name="email"></ion-input>
         <ion-label><ion-icon name="key-outline"></ion-icon>Contraseña</ion-label>
         <ion-input type="password" [(ngModel)]="pass" name="pass"></ion-input>
+        <ion-button color="dark" (click)="singup()">Sign up</ion-button>
         <ion-button color="dark" (click)="singup()">Sign up</ion-button>
       </form>
     </div>

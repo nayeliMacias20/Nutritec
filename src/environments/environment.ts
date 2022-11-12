@@ -4,6 +4,17 @@
 
 export const environment = {
   production: false
+  //Añadimos la apikey de Firebase para la conección
+ //firebaseConfig: {
+  // apiKey: "AIzaSyDmz0OxrBWe4e96fUQFMBRgdeR6mHq0hms",
+  // authDomain: "nutritecapp-f11d1.firebaseapp.com",
+  // projectId: "nutritecapp-f11d1",
+  // storageBucket: "nutritecapp-f11d1.appspot.com",
+  // messagingSenderId: "705115021642",
+  // appId: "1:705115021642:web:ac1f5d0fd514af0337e1b3",
+  // measurementId: "G-45P2CNGS3F"
+  //
+
 };
 
 /*

@@ -1,72 +1,29 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      AGREGAR PRODUCTO
-    </ion-title>
+    <ion-searchbar [(ngModel)]="myInput"><ion-icon name="home-outline" (click)="home()"></ion-icon></ion-searchbar>
   </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Cenas</ion-title>
+  </ion-toolbar>
+
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">AGREGAR PRODUCTO</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-list>
-    <ion-item class="Clave">
-      <ion-label class="Clave"position="floating">Clave</ion-label>
-      <ion-input [(ngModel)] ="Clave"></ion-input>
-    </ion-item>
-    <ion-item class="Tipo">
-      <ion-label class="Tipo"position="floating">Tipo Sombrero</ion-label>
-      <ion-input [(ngModel)] ="Tipo"></ion-input>
-    </ion-item>
-    <ion-item class="Marca">
-      <ion-label class="Marca"position="floating">Marca</ion-label>
-      <ion-input [(ngModel)] ="Marca"></ion-input>
-    </ion-item>
-    <ion-item class="Color">
-      <ion-label class="Color">Color</ion-label>
-      <ion-select [(ngModel)]="Color" interface="alert" multiple="false" placeholder="Seleccionar" >
-        <ion-select-option value="Negro">Negro</ion-select-option>
-        <ion-select-option value="Blanco">Blanco</ion-select-option>
-        <ion-select-option value="Cafe">Cafe</ion-select-option>
-        <ion-select-option value="Beige">Beige</ion-select-option>
-        <ion-select-option value="Gris">Gris</ion-select-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label>Talla</ion-label>
-      <ion-select [(ngModel)]="Talla" interface="alert" multiple="false" placeholder="Seleccionar" >
-        <ion-select-option value="CH">CH</ion-select-option>
-        <ion-select-option value="M">M</ion-select-option>
-        <ion-select-option value="G">G</ion-select-option>
-        <ion-select-option value="EG">EG</ion-select-option>
-      </ion-select>
-    </ion-item>
-    <ion-item class="Precio">
-      <ion-label class="Precio"position="floating">Precio</ion-label>
-      <ion-input [(ngModel)] ="Precio"></ion-input>
-    </ion-item>
-    <ion-item class="Cantidad">
-      <ion-label class="Precio"position="floating">Cantidad</ion-label>
-      <ion-input [(ngModel)] ="Cantidad"></ion-input>
-    </ion-item>
-    <ion-item >
-      <ion-item class="Imagen">
-        <ion-label class="Imagen"position="floating">Agregar Imagen</ion-label>
-        <ion-input type="file"  id="img" (change)="selectImagen($event.target.files)" accept="image/*"></ion-input>
-      </ion-item>
-    </ion-item>
-  </ion-list>
-  <ion-item>
-    <ion-button class="agregar" (click)="agregarProducto()">
-      Agregar
-    </ion-button>
-    <ion-button class="vista">
-      Vista Previa
-    </ion-button>
-  </ion-item>
+<ion-content>
+  <img class="image" src="./assets/Fondo4.jpg">
+  <ion-card class="cards">
+    <div class="diets" *ngFor="let dietas of adminService.dietas;">
+      <ion-item *ngIf="adminService.dietas.length>=1">
+        <ion-card class="card1" (click)="Alert()">
+          <p class="nombre">{{dietas.name}}</p>
 
-  <img src="{{imagenBase64}}" alt="">
+          <p class="description">{{dietas.description}}</p>
+        </ion-card>
+      </ion-item>
+      <!--<ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+      -->
+    </div>
+  </ion-card>
 </ion-content>

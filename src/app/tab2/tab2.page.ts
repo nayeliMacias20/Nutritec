@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { ActionSheetController } from '@ionic/angular';
-import { ModalController} from '@ionic/angular';
 import { AdminService } from '../servicios/admin.service';
+import { ModalController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -12,16 +12,17 @@ import { AlertController } from '@ionic/angular';
 export class Tab2Page {
 
   handlerMessage = '';
-  constructor(public alertController: AlertController,
-    public modalController: ModalController,
-    public userService:AdminService) {}
+  constructor(public router: Router, public adminService: AdminService,
+    public modalController: ModalController, public alertController: AlertController) {}
   
   autocomplete: { input: string; };
   //Mandamos a llamar la información que tenemos en la base de datos de las dietas
   ngOnInit() {
-    this.userService.obtenerDiets();
+    this.adminService.obtenerDiets();
   }
-
+  home() {
+    this.router.navigate(['/tabs/tab1'])
+  }
   async Alert() {
     const alert = await this.alertController.create({
       header: 'Alert',

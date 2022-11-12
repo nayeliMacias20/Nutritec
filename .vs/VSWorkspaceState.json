@@ -1,14 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\node-esqueleto",
-    "\\node-esqueleto\\server",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\tab1-ad",
-    "\\src\\app\\tab2",
-    "\\src\\app\\tabs"
+    "\\src\\app\\login",
+    "\\src\\app\\tab3-ad",
+    "\\src\\app\\tab4",
+    "\\src\\app\\tabs",
+    "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\app\\tab2\\tab2.page.scss",
   "PreviewInSolutionExplorer": false
 }

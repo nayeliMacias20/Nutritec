@@ -1,39 +1,50 @@
-//Cards
-.card1 ion-card {
+ion-content{
+  font-family: 'Amiri Quran', serif;
+
+}
+ion-card-title {
+  margin-top: 1%;
+  margin-left: 3%;
+}
+.contact {
+  width: 20%;
+  margin-top: 5%;
+  margin-left: 35%;
+  margin-right: 15%;
+}
+ion-card-subtitle {
+  margin-top:5%;
+  margin-left: 15%;
+}
+.calorias{
+  font-size:15px;
+}
+.conteo {
+  font-size: 15px;
+}
+.dietas {
+  --background: url('/assets/nutritec.png')no-repeat 100% 100%;
+  //background: rgb(231,238,242);
+  //background: radial-gradient(circle, rgba(231,238,242,1) 0%, rgba(102,213,210,0.5679583333333333) 88%, rgba(245,246,249,1) 100%);
+}
+.diets{
+    margin-top:1%;
+}
+.buttona {
   width: 90%;
-  height: 150%;
+  margin-left:5%;
+  color:black;
 }
-.card1 ion-card-title {
-  font: 5px;
-  margin-top:5px;
-  text-align:center;
+.button1 {
+  margin-left: 68%;
 }
-ion-item {
-  --padding-start: 0;
+.button2 {
+  margin-left: 74%;
 }
-ion-card-header.ios {
-  display: flex;
-  flex-flow: column-reverse;
+.button3 {
+  margin-left: 80%;
 }
-ion-icon {
-  margin-left: 15px;
-  width: 250px;
-  height: 100px;
+.button4 {
+  margin-left: 50%;
 }
-//Calorias
-.caloriasR{
-  font-size: 20px;
-  font-weight:bold;
-  margin-left: 20px;
-}
-.caloriasR1 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-left: 20px;
-}
-//Botones
-.botons ion-icon {
-  margin-left: 15px;
-  width: 50px;
-  height: 50px;
-}
+

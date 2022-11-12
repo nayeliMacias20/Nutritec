@@ -1,37 +1,52 @@
-<ion-header collapse="condense">
-  <ion-toolbar class="new-background"> 
-    <ion-searchbar color="light">
-      <ion-button (click)="dismiss()" class="atras"><ion-icon name="arrow-back-circle-outline" ></ion-icon>
-    </ion-button>
-    </ion-searchbar>
+
+<ion-header >
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="myInput"><ion-icon name="home-outline" (click)="home()"></ion-icon></ion-searchbar>
   </ion-toolbar>
+  <ion-title>
+   Mi Perfil Nutritec
+  </ion-title>
 </ion-header>
-<ion-content [fullscreen]="true" class="background">
-  <div>
-    <div class="header">
-      <ion-slides pager="true" [options]="slideOpts">
-        <ion-slide>
-          <ion-img src="../../assets/header.jpg"></ion-img>
-        </ion-slide>
-        <ion-slide>
-          <ion-img src="../../assets/header1.jpg"></ion-img>
-        </ion-slide>
-        <ion-slide>
-          <ion-img src="../../assets/header2.jpg"></ion-img>
-        </ion-slide>
-      </ion-slides>
-      <!--<h1 class="bienvenido">Bienvenido {{userService.userName}}!</h1>-->
-    </div>
-    <div class="card">
-      <ion-card class="card1">
-        <img src="../assets/Texanablanca.jpg">
-          <p class="precio">Precio:</p>
-          <ion-card-title>$1800</ion-card-title>
-          <p class="marca">Marca:</p>
-          <ion-card-subtitle>WRANGLER</ion-card-subtitle>
-          <p class="desc">Descripcion:</p>
-          <ion-button class="mas1" (click)="tab3()"><ion-icon name="add-circle-outline"></ion-icon></ion-button>
-      </ion-card>
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-icon name="person-circle" class="profile"></ion-icon>
+  </ion-item>
+  <div *ngFor="let usuarios of userService.usuarios;">
+    <!--<div *ngIf="!usuarios.isedist; else elseBlock">-->
+    <div>
+    <div>
+      <ion-list class="formulario">
+        <ion-item class="nombre">
+          <ion-label position="fixed">Nombre:</ion-label>
+          <ion-input [(ngModel)]="nombre" class="form-control" required>{{usuarios.nombre}}</ion-input>
+        </ion-item>
+        <ion-item class="correo">
+          <ion-label position="fixed">Correo:</ion-label>
+          <ion-input [(ngModel)]="correo" class="form-control" required>{{usuarios.correo}}</ion-input>
+        </ion-item>
+      </ion-list>
+      <!--Botones-->
+      <ion-button class="editar" shape="round" (click)="editar()">Editar contacto</ion-button>
+      <ion-button class="eliminar" shape="round" (click)="eliminar()">Eliminar contacto</ion-button>
     </div>
   </div>
+  </div>
+  <ng-template #elseBlock>
+    <div>
+      <br>
+      <ion-label class="editaru">Editar Usuario</ion-label>
+      <ion-list class="formulario">
+        <ion-item class="nombre">
+          <ion-label position="fixed">Nombre:</ion-label>
+          <ion-input [(ngModel)]="usuario.nombre" class="form-control" required></ion-input>
+        </ion-item>
+        <ion-item class="correo">
+          <ion-label position="fixed">Correo:</ion-label>
+          <ion-input [(ngModel)]="usuario.correo" class="form-control" required></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-button class="cancelar" shape="round" (click)="cancelar()">Cancelar</ion-button>
+      <ion-button class="guardar" shape="round" (click)="guardar()">Guardar contacto</ion-button>
+    </div>
+  </ng-template>
 </ion-content>

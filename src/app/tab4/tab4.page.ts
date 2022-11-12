@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActionSheetController, ModalController } from '@ionic/angular';
+import { UsuariosService } from '../servicios/usuarios.service';
 
 @Component({
   selector: 'app-tab4',
@@ -9,47 +10,39 @@ import { ActionSheetController, ModalController } from '@ionic/angular';
 })
 export class Tab4Page implements OnInit {
 
+
+
   constructor(public router:Router,
     public modalCtrl:ModalController,
-    public actionSheetController:ActionSheetController) { }
+    public actionSheetController: ActionSheetController,
+    public userService: UsuariosService
+    //private firestoreService: FirestoreService
+  ) { }
 
   ngOnInit() {
+    //Crear usuario vacio
+    //this.EditarDietas = {} as Dietas;
+    this.userService.obtenerUsuarios();
   }
-  tab2(){
-    this.router.navigate(['/tabs/tab2'])
+
+  //clicInsertarDieta() {
+  //  this.firestoreService.insertar("dietas", this.EditarDietas).then(() => {
+  //    console.log('Dieta añadida correctamente!');
+  //    this.EditarDietas = {} as Dietas;
+  //  }, (error) => {
+  //    console.error(error);
+  //  });
+  //}
+
+  editar() {
+    this.userService.actulizarUsuario();
   }
-  tab3(){
-    this.router.navigate(['/tabs/tab3'])
+  guardar() {
+    this.userService.actulizarUsuario();
+
   }
-  
-  async presentActionSheet() {
-    const actionSheet = await this.actionSheetController.create({
-      header: 'TexApp',
-      cssClass: 'my-custom-class',
-      buttons: [{
-        text: 'Comprar',
-        icon: 'card-outline',
-        handler: () => {
-          console.log('Play clicked');
-          this.tab3();
-        }
-      }, {
-        text: 'Cancel',
-        icon: 'close',
-        role: 'cancel',
-        handler: () => {
-          console.log('Cancel clicked');
-        }
-      }]
-    });
-    await actionSheet.present();
+  eliminar() {
+    this.userService.eliminarUsuario();
   }
-  dismiss() {
-    // using the injected ModalController this page
-    // can "dismiss" itself and optionally pass back data
-    this.modalCtrl.dismiss({
-      'dismissed': true
-    });
-    
-  }
+
 }

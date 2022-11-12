@@ -1,34 +1,60 @@
-.fondo{
-    margin: 0;
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+.contenedor {
+  height: 100%;
+  padding: 0px;
+  width: 90%;
+  padding: 10px;
+  margin-left:15px;
+  margin-top:20px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
 }
-.no-scroll{
-    overflow: hidden;
+.fondo {
+  margin: 0;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #cccccc;
+  border-block-color: black;
+  //background: rgb(231,238,242);
+  background: radial-gradient(circle, rgba(231,238,242,1) 0%, rgba(153,197,217,1) 50%, rgba(245,246,249,1) 100%);
 }
-.logo{
-    width: 50%;
-    display: block;
-    margin: auto;
-    margin-top:25%;
+.fondo no-scroll {
+  //--background: url('assets/Fondo2.jpg') no-repeat;
+}
+.no-scroll {
+  overflow: hidden;
+}
+.logo {
+  width: 50%;
+  display: block;
+  margin: auto;
+  margin-top: 25%;
+  z-index: 10;
 }
 ion-input{
     margin-top: 3%;
-    border-radius: 37px 37px 37px 37px;
-    -moz-border-radius: 37px 37px 37px 37px;
-    -webkit-border-radius: 37px 37px 37px 37px;
+    border-radius: 35px 35px 35px 35px;
+   // -moz-border-radius: 37px 37px 37px 37px;
+   // -webkit-border-radius: 37px 37px 37px 37px;
     border: 0px solid #000000;
     background: rgb(139, 137, 137);
 }
 ion-label{
     color:black;
 }
+ion-button {
+    margin-top:25px;
+    border-radius:15px;
+  background: rgb(231,238,242);
 
+}
 h2 {
   text-align: center;
-  margin-top: 25%;
+  margin-top: 15%;
 }
 .contenedor{
     border-color:antiquewhite;
