@@ -5,26 +5,17 @@
   <ion-toolbar>
     <ion-title>Desayunos</ion-title>
   </ion-toolbar>
-
 </ion-header>
 
 <ion-content>
-  <img class="image" src="./assets/Fondo2.jpg">
-  <ion-card class="cards">
-    <div class="diets" *ngFor="let dietas of adminService.dietas;">
-      <ion-item *ngIf="adminService.dietas.length>=1">
+  <!--<img class="image" src="./assets/Fondo2.jpg">-->
+    <div class="desay">
+      <ion-item *ngFor="let desayuno of desayunos">
         <ion-card class="card1" (click)="Alert()">
-          <p class="nombre">{{dietas.name}}</p>
-
-          <p class="description">{{dietas.description}}</p>
+          <p class="nombre">{{name}}</p>
+          <p class="ingredientes">{{ingredientes}}</p>
         </ion-card>
       </ion-item>
-      <!--<ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
-    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
-    </ion-infinite-scroll-content>
-  </ion-infinite-scroll>
-  -->
     </div>
-  </ion-card>
 </ion-content>
 

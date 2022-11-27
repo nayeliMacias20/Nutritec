@@ -3,26 +3,27 @@
     <img class="logo" src="../../assets/logo.png" alt="AppFitness">
     <div class="contenedor">
       <h2>Bienvenido</h2>
+      <!--LOGIN-->
       <form *ngIf="mostrar==true" [ngClass]="mostrar==true?'mostrar':'ocultar'">
-        <ion-label><ion-icon name="person-outline"></ion-icon> Email</ion-label>
-        <ion-input [(ngModel)]="user" name="user"></ion-input>
-        <ion-label><ion-icon name="key-outline"></ion-icon> Contraseña</ion-label>
+        <ion-label ><ion-icon name="person-outline"></ion-icon> Email</ion-label>
+        <ion-input [(ngModel)]="email" name="email"></ion-input>
+        <ion-label ><ion-icon name="key-outline"></ion-icon> Contraseña</ion-label>
         <ion-input type="password" [(ngModel)]="pass" name="pass"></ion-input>
-        <ion-button color="dark" (click)="iniciarSesion()">Log In</ion-button>
-        <ion-button color="dark" style="float: right;" (click)="showInfo(false)">Register</ion-button>
+        <ion-button fill="outline" ion-button full class="logIn" (click)="iniciarSesion()">Log In</ion-button>
+        <ion-button fill="outline"  class="SignUp" (click)="showInfo(false)">Sign up</ion-button>
+        
       </form>
+      <!--REGISTER-->
 
       <form *ngIf="mostrar==false" [ngClass]="mostrar==false?'mostrar':'ocultar'">
-        <ion-label><ion-icon name="person-outline"></ion-icon>Usuario</ion-label>
-        <ion-input [(ngModel)]="user" name="user"></ion-input>
-        <ion-label><ion-icon name="mail-outline"></ion-icon>Email</ion-label>
+        <ion-label><ion-icon name="person-outline"></ion-icon> Usuario</ion-label>
+        <ion-input [(ngModel)]="name" name="nombre"></ion-input>
+        <ion-label><ion-icon name="mail-outline"></ion-icon> Email</ion-label>
         <ion-input type="email" [(ngModel)]="email" name="email"></ion-input>
-        <ion-label><ion-icon name="key-outline"></ion-icon>Contraseña</ion-label>
+        <ion-label><ion-icon name="key-outline"></ion-icon> Contraseña</ion-label>
         <ion-input type="password" [(ngModel)]="pass" name="pass"></ion-input>
-        <ion-button color="dark" (click)="singup()">Sign up</ion-button>
-        <ion-button color="dark" (click)="singup()">Sign up</ion-button>
+        <ion-button fill="outline"  class="SignUp1"(click)="singup()">Sign up</ion-button>
       </form>
     </div>
   </div>
 </ion-content>
-

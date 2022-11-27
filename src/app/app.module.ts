@@ -5,8 +5,6 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
-
 
 
 @NgModule({
@@ -17,7 +15,6 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
     AppRoutingModule,
     HttpClientModule],
   providers: [
-    YoutubeVideoPlayer,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy, }
     ],
   bootstrap: [AppComponent],

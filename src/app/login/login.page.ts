@@ -9,7 +9,7 @@ import { UsuariosService } from '../servicios/usuarios.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  user:string
+  name:string
   pass:string
   email:string
   mostrar:boolean
@@ -20,11 +20,9 @@ export class LoginPage implements OnInit {
     this.valor='Login'
     this.us=[]
   }
-
   ngOnInit() {
     this.userService.obtenerUsuarios();
   }
-
   showInfo(value:boolean){
     this.mostrar=value;
     if(value==true){
@@ -35,40 +33,35 @@ export class LoginPage implements OnInit {
   }
   async iniciarSesion(){
     let userAct:any=[]
-    for(let i=0;i<this.userService.usuarios.length;i++){
-      if(this.user==this.userService.usuarios[i].correo){
-        
-        if(this.pass==this.userService.usuarios[i].pass){
-          /* Tipos de usuario:
-          1 usuario final.
-          0 admin
-          */
-          if(this.userService.usuarios[i].tipo==0){
+    //for(let i=0;i<this.userService.usuarios.length;i++){
+      if(this.email==this.userService.usuarios.email){
+        console.log("si entra aqui");
+        if(this.pass==this.userService.usuarios.password){
+          //if(this.userService.usuarios[i].tipo==0){
             this.router.navigate(['/tabs/tab1'])
-          }else if(this,this.userService.usuarios[i].tipo==1){
-            this.router.navigate(['/tabs/tab1'])
-          }
-          userAct=this.userService.usuarios[i];
+          //}else if(this,this.userService.usuarios[i].tipo==1){
+          //  this.router.navigate(['/tabs/tab1'])
+          //}
+
+          userAct=this.userService.usuarios;
           this.userService.usuarios=userAct;
           localStorage.setItem('userApp',JSON.stringify(userAct));
         }else{
           const alert = await this.alertController.create({
           cssClass: 'my-custom-class',
           header: 'Error',
-          message: 'CREDENCIALES INVALIDADS.',
+          message: 'Email o Password Incorrectas, Intente de nuevo.',
           buttons: ['OK']
          });
-  
           await alert.present();
         }
       }
-    }
-    this.user=null;
+    //}
+    this.email=null;
     this.pass=null;
   }
-
   async singup(){
-    if(this.user==null || this.pass==null ||  this.email==null){
+    if(this.name==null || this.pass==null ||  this.email==null){
       const alert = await this.alertController.create({
         cssClass: 'my-custom-class',
         header: 'ERROR',
@@ -78,26 +71,24 @@ export class LoginPage implements OnInit {
       await alert.present();
     }else{
       
-      this.userService.usuario.nombre=this.user;
-      this.userService.usuario.pass=this.pass;
-      this.userService.usuario.correo=this.email;
-      this.userService.usuario.tipo=1;
+      this.userService.usuario.name=this.name;
+      this.userService.usuario.password=this.pass;
+      this.userService.usuario.email=this.email;
       
       this.userService.registrarUsuario()
       const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'INFO',
-      message: 'Usuario Regiastrado',
+      message: 'Usuario Registrado',
       buttons: ['OK']
       });
       await alert.present();
       
       this.showInfo(true);
 
-      this.user=null;
+      this.name=null;
       this.email=null;
       this.pass=null;
     }
   }
-
 }

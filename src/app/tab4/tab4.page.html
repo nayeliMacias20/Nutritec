@@ -1,52 +1,52 @@
-
 <ion-header >
   <ion-toolbar>
     <ion-searchbar [(ngModel)]="myInput"><ion-icon name="home-outline" (click)="home()"></ion-icon></ion-searchbar>
   </ion-toolbar>
   <ion-title>
-   Mi Perfil Nutritec
-  </ion-title>
+    Mi progreso Nutritec
+   </ion-title>
 </ion-header>
 <ion-content [fullscreen]="true">
-  <ion-item>
-    <ion-icon name="person-circle" class="profile"></ion-icon>
-  </ion-item>
-  <div *ngFor="let usuarios of userService.usuarios;">
-    <!--<div *ngIf="!usuarios.isedist; else elseBlock">-->
-    <div>
-    <div>
-      <ion-list class="formulario">
-        <ion-item class="nombre">
-          <ion-label position="fixed">Nombre:</ion-label>
-          <ion-input [(ngModel)]="nombre" class="form-control" required>{{usuarios.nombre}}</ion-input>
-        </ion-item>
-        <ion-item class="correo">
-          <ion-label position="fixed">Correo:</ion-label>
-          <ion-input [(ngModel)]="correo" class="form-control" required>{{usuarios.correo}}</ion-input>
-        </ion-item>
-      </ion-list>
-      <!--Botones-->
-      <ion-button class="editar" shape="round" (click)="editar()">Editar contacto</ion-button>
-      <ion-button class="eliminar" shape="round" (click)="eliminar()">Eliminar contacto</ion-button>
+  <div class="contenedor">
+    <!--Logo-->
+    <img class="logo" src="../../assets/logo.png" alt="AppFitness">
+    <div class="miscalorias">
+      <h1 class="calorias">Mis calorias</h1>
+      <!--Mis calorias consumidas-->
+      <ion-item>
+        <ion-text color="tertiary">
+          <h3 class="calorias">Calorias Consumidas:</h3>
+        </ion-text>
+        <p class="conteo"> @Conteo</p>
+      </ion-item>
     </div>
-  </div>
-  </div>
-  <ng-template #elseBlock>
-    <div>
-      <br>
-      <ion-label class="editaru">Editar Usuario</ion-label>
-      <ion-list class="formulario">
-        <ion-item class="nombre">
-          <ion-label position="fixed">Nombre:</ion-label>
-          <ion-input [(ngModel)]="usuario.nombre" class="form-control" required></ion-input>
+    <ion-title>Administración de la cuenta</ion-title>
+    <ion-card class="cards">
+      <div class="users" *ngFor="let user of userService.users;">
+        <ion-item *ngIf="userService.users.length>=1">
+          <ion-card>
+            <p class="nombre">{{users.nombre}}</p>
+            <p class="correo">{{users.correo}}</p>
+          </ion-card>
         </ion-item>
-        <ion-item class="correo">
-          <ion-label position="fixed">Correo:</ion-label>
-          <ion-input [(ngModel)]="usuario.correo" class="form-control" required></ion-input>
-        </ion-item>
-      </ion-list>
-      <ion-button class="cancelar" shape="round" (click)="cancelar()">Cancelar</ion-button>
-      <ion-button class="guardar" shape="round" (click)="guardar()">Guardar contacto</ion-button>
-    </div>
-  </ng-template>
+      </div>
+    </ion-card>
+       <!--Aqui mostramos lo de las imagenes-->
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" *ngFor="let foto of fotoService.fotos; index as position">
+          <ion-img [src]="foto.webviewPath"></ion-img>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-item>
+      <ion-icon name="person-circle" class="profil ve"></ion-icon>
+    </ion-item>
+    <!--Manejar la versión vertical y horizontal-->
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button (click)="addNewImageGallery()">
+        <ion-icon name="camera"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
 </ion-content>

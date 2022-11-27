@@ -1,0 +1,32 @@
+ async iniciarSesion(){
+    let userAct:any=[]
+    for(let i=0;i<this.userService.usuarios.length;i++){
+      //if(this.user==this.userService.usuarios[i].user){
+        //if(this.pass==this.userService.usuarios[i].pass){
+          /* Tipos de usuario:
+          1 usuario final.
+          0 admin
+          */
+          //if(this.userService.usuarios[i].tipo==0){
+            this.router.navigate(['/tabs/tab1'])
+          //}else if(this,this.userService.usuarios[i].tipo==1){
+          //  this.router.navigate(['/tabs/tab1'])
+          //}
+          userAct=this.userService.usuarios[i];
+          this.userService.usuarios=userAct;
+          localStorage.setItem('userApp',JSON.stringify(userAct));
+        }else{
+          const alert = await this.alertController.create({
+          cssClass: 'my-custom-class',
+          header: 'Error',
+          message: 'CREDENCIALES INVALIDAS.',
+          buttons: ['OK']
+         });
+  
+          await alert.present();
+        }
+      }
+    }
+    this.user=null;
+    this.pass=null;
+  }

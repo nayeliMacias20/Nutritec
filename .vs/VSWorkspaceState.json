@@ -1,13 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\node-esqueleto",
+    "\\node-esqueleto\\server",
+    "\\node-esqueleto\\server\\controllers",
+    "\\node-esqueleto\\server\\models",
+    "\\node-esqueleto\\server\\routes",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\login",
-    "\\src\\app\\tab3-ad",
-    "\\src\\app\\tab4",
-    "\\src\\app\\tabs",
+    "\\src\\app\\servicios",
     "\\src\\environments"
   ],
+  "SelectedNode": "\\node-esqueleto\\server\\controllers\\user.controller.js",
   "PreviewInSolutionExplorer": false
 }

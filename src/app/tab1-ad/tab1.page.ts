@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AdminService } from '../servicios/admin.service';
+import { DesayunosService } from '../servicios/desayunos.service';
 import { ModalController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
@@ -12,21 +12,26 @@ import { Router } from '@angular/router';
 })
 export class Tab1Page {
 
-  
+
   handlerMessage = '';
   //Buscador
 
-  constructor(public router:Router, public adminService: AdminService,
+  constructor(public router:Router, public desayunosService: DesayunosService,
     public modalController: ModalController,
-    public alertController: AlertController) { }
+    public alertController: AlertController) {
+      this.desayunosService.obtenerDesayunos();
+     }
+     
   autocomplete: { input: string; };
+
   //Mandamos a llamar la información que tenemos en la base de datos de las dietas
   ngOnInit() {
-    this.adminService.obtenerDiets();
+    
   }
   home() {
     this.router.navigate(['/tabs/tab1'])
   }
+
   async Alert() {
     const alert = await this.alertController.create({
       header: 'Alert',

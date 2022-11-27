@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { UsuariosService } from '../servicios/usuarios.service';
-import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 
 @Component({
   selector: 'app-tab1',
@@ -17,17 +15,12 @@ export class Tab1Page {
   mostrar:boolean;
   valor:string
   constructor(public router:Router,
-    public alertController: AlertController,
-    public userService: UsuariosService,
-    private youtubeVideoPlayer: YoutubeVideoPlayer  ) {
+    public alertController: AlertController) {
       this.mostrar=true;
       this.valor=''
  } 
   ngOnInit() {
-    this.userService.obtenerUsuarios();
-  }
- invokeVideoPlayer() {
-    this.youtubeVideoPlayer.openVideo('pass-video-id');
+
   }
  tab1ad(){
    this.router.navigate(['/tabs/tab1-ad'])

@@ -22,9 +22,9 @@
   //background: rgb(231,238,242);
   background: radial-gradient(circle, rgba(231,238,242,1) 0%, rgba(153,197,217,1) 50%, rgba(245,246,249,1) 100%);
 }
-.fondo no-scroll {
+//.fondo no-scroll {
   //--background: url('assets/Fondo2.jpg') no-repeat;
-}
+//}
 .no-scroll {
   overflow: hidden;
 }
@@ -49,8 +49,19 @@ ion-label{
 ion-button {
     margin-top:25px;
     border-radius:15px;
-  background: rgb(231,238,242);
-
+    background: rgb(231,238,242);
+}
+.logIn{
+  
+  margin-left: 20%;
+}
+.SignUp{
+  
+  margin-left: 10%;
+}
+.SignUp1{
+  
+  margin-left: 35%;
 }
 h2 {
   text-align: center;

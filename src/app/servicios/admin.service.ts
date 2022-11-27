@@ -8,7 +8,7 @@ export class AdminService {
   dietas:any;
   respuesta:any
   dieta:any
-  urlPeticionNode = "http://localhost:8090/api";
+  urlPeticionNode = "http://localhost:3000";
 
   constructor(public httpClient: HttpClient) {
     this.dietas = []
