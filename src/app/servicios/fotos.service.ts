@@ -12,12 +12,11 @@ export class FotosService {
   //Arreglo para almacenar las fotografias
   public fotos: Foto[] = [];
   //Clave para recuperar todas las fotos
-  private PHOTO_STORAGE: string = "Fotos";
+  private PHOTO_STORAGE: string = "fotos";
 
   constructor() { }
 
   //Donde se almacenará las fotografias
-
   public async addNewImageGallery(){
     //Proceso donde se tomará la fotografia
     const fotoCapturada = await Camera.getPhoto({
@@ -25,12 +24,12 @@ export class FotosService {
       source: CameraSource.Camera,
       quality: 100
     })
-
+    //Es para almacenar la fotografia en el Arrray
     //this.fotos.unshift({
-    //  //Mandamos a llamar la interface de foto 
-    //  //Para poder publicarla
-    //  filepath: "Foto_",
-    //  webviewPath: fotoCapturada.webPath
+    ////Mandamos a llamar la interface de foto 
+    ////Para poder publicarla
+    //filepath: "Foto_",
+    //webviewPath: fotoCapturada.webPath
     //})
 
     const savedImageFile = await this.saveImageGallery(fotoCapturada)
@@ -47,6 +46,7 @@ export class FotosService {
   const base64Data = await this.readBase64(cameraPhoto);
   //Escirbir la foto en el directorio
   const fileName = new Date().getTime + '.jpeg';
+  //Escribir en el sistema de archivos
   const savedFile = await Filesystem.writeFile({
     path: fileName,
     data: base64Data,
@@ -87,7 +87,7 @@ export class FotosService {
       })
 
       //Solo para plataforma web
-      foto.webviewPath = `data:image/jpeg;base64,${readFile}`
+      foto.webviewPath = `data:image/jpeg;base64,${readFile.data}`
     }
   }
 }

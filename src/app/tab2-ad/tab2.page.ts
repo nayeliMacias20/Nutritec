@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdminService } from '../servicios/admin.service';
+import { CenasService } from '../servicios/cenas.service';
 import { ModalController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
@@ -15,14 +15,14 @@ export class Tab2Page {
   //Buscador
 
  
-  constructor(public router: Router, public adminService: AdminService,
+  constructor(public router: Router, public cenasService: CenasService,
     public modalController: ModalController,
     public alertController: AlertController) { }
   autocomplete: { input: string; };
 
   //Mandamos a llamar la información que tenemos en la base de datos de las dietas
   ngOnInit() {
-    this.adminService.obtenerDiets();
+    this.cenasService.obtenerCenas();
   }
   home() {
     this.router.navigate(['/tabs/tab1'])

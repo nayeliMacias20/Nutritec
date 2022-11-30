@@ -1,12 +1,37 @@
 * {
   font-family: 'AmiriQuran';
 }
-
+.perfil{
+  color: black;
+  font-size: 21px;
+  font-weight: bolder;
+  margin-top: 10px;
+  text-align: center;
+}
 .logo {
   width: 30%;
-  margin-top: 15%;
-  margin-left: 32%;
+  margin-top: 5%;
+  margin-left: 33%;
 
+}
+ion-item{
+  color: black;
+  font-size: 15px;
+  font-weight: bolder;
+}
+.galeria{
+  color: black;
+  font-size: 21px;
+  font-weight: bolder;
+  margin-top: 95px;
+  text-align: center;
+}
+.fotos{
+  margin-top: 20px;
+}
+.boton{
+  margin-top: 50px;
+  color: darkgrey;
 }
 ion-searchbar {
   margin-top: 6%;
@@ -23,6 +48,7 @@ ion-title{
   margin-top: 50px;
   text-align: center;
 }
+
 .calorias{
   color: black;
   font-size: 21px bold;
@@ -41,7 +67,7 @@ ion-icon.profile {
 ion-list {
   margin-top: 80px;
 }
-
+ion-
 ion-label.editaru {
   font-size: 25px;
   margin-top: 25%;

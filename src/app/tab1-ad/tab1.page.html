@@ -3,19 +3,28 @@
     <ion-searchbar [(ngModel)]="myInput"><ion-icon name="home-outline" (click)="home()"></ion-icon></ion-searchbar>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-title>Desayunos</ion-title>
+    <ion-title>Desayunos <img style="width: 25px ;" src="../../assets/desayuno.png"> </ion-title>
+    <p></p>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <!--<img class="image" src="./assets/Fondo2.jpg">-->
-    <div class="desay">
-      <ion-item *ngFor="let desayuno of desayunos">
+  <img class="image" src="./assets/dietas/desayunos.png">
+    <div class="desay" *ngFor="let desayuno of desayunosService.desayunos.cont.desayunos;" >
+      <ion-item>
         <ion-card class="card1" (click)="Alert()">
-          <p class="nombre">{{name}}</p>
-          <p class="ingredientes">{{ingredientes}}</p>
+          <p class="nombre">{{desayuno.name}}</p>
+        <ion-item>
+          <p class="ingredientes">{{desayuno.ingredientes}}</p>
+          <br>
+          <br>
+        </ion-item>
         </ion-card>
       </ion-item>
     </div>
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 </ion-content>
 

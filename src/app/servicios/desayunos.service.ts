@@ -15,10 +15,11 @@ export class DesayunosService {
     this.respuesta=[]
   }
   obtenerDesayunos(){
-    this.httpClient.get<any>(this.urlPeticionNode).subscribe(
+    this.httpClient.get(this.urlPeticionNode).subscribe(
+      //this.httpClient.get<any>(this.urlPeticionNode).subscribe(
       res=>{
-        this.desayunos = res.cont.desayunos
-        console.log(res.cont);
+        this.desayunos = res
+        console.log(res);
       },
       err=>{
         console.log("Hubo un error",err);

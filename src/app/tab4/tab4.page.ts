@@ -20,16 +20,20 @@ export class Tab4Page implements OnInit {
     public fotoService: FotosService
     //private firestoreService: FirestoreService
   ) { }
+  addNewImageGallery(){
+      this.fotoService.addNewImageGallery();
+    }
 
-  ngOnInit() {
+ async ngOnInit() {
     //Crear usuario vacio
     //this.EditarDietas = {} as Dietas;
     this.userService.obtenerUsuarios();
     //Inicia y deja las fotos cargadas
-    this.fotoService.loadSaved();
-  }
-  addNewImageGallery(){
-    this.fotoService.addNewImageGallery();
+    await this.fotoService.loadSaved();
   }
 
+  home() {
+    this.router.navigate(['/tabs/tab1'])
+  }
+  
 }

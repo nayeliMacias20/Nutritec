@@ -3,49 +3,73 @@ ion-content{
   color: black;
 
 }
+//.dietas {
+  //--background: url('/assets/n')no-repeat 100% 100%;
+  //background: rgb(231,238,242);
+  //background: radial-gradient(circle, rgba(231,238,242,1) 0%, rgba(102,213,210,0.5679583333333333) 88%, rgba(245,246,249,1) 100%);
+//}
 ion-card-title {
   margin-top: 1%;
   margin-left: 3%;
 }
 .contact {
-  width: 20%;
-  margin-top: 5%;
+  width: 30%;
+  margin-top: 2%;
   margin-left: 35%;
-  margin-right: 15%;
+  margin-right: 20%;
 }
-ion-card-subtitle {
-  margin-top:5%;
-  margin-left: 15%;
+ion-card-subtitle{
+  margin-top: 2%;
+  text-align: center;
 }
-.calorias{
-  font-size:15px;
-}
-.conteo {
-  font-size: 15px;
-}
-.dietas {
-  --background: url('/assets/nutritec.png')no-repeat 100% 100%;
-  //background: rgb(231,238,242);
-  //background: radial-gradient(circle, rgba(231,238,242,1) 0%, rgba(102,213,210,0.5679583333333333) 88%, rgba(245,246,249,1) 100%);
-}
-.diets{
-    margin-top:1%;
+.misdietas{
+  color: black;
+  font-size: 21px;
+  font-weight: bolder;
+  text-align: center;
 }
 .buttona {
   width: 90%;
   margin-left:5%;
   color:black;
 }
+.desayuno{
+  color:black;
+  margin-left: 5px;
+}
+.comida{
+  color:black;
+  margin-left: 5px;
+}
+.colaciones{
+  color:black;
+  margin-left: 5px;
+}
+.cena{
+  color:black;
+  margin-left: 5px;
+}
 .button1 {
-  margin-left: 68%;
+  margin-left: 58%;
 }
 .button2 {
-  margin-left: 74%;
+  margin-left: 64%;
 }
 .button3 {
-  margin-left: 80%;
+  margin-left: 70%;
 }
 .button4 {
-  margin-left: 50%;
+  margin-left: 41%;
+}
+.frase{
+  color: black;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: left;
+}
+.exito{
+  color: black;
+  font-size: 15px;
+  text-align: justify;
 }
 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { UsuariosService } from '../servicios/usuarios.service';
 
 @Component({
   selector: 'app-tab1',
@@ -14,13 +15,15 @@ export class Tab1Page {
   };
   mostrar:boolean;
   valor:string
+  name:string
+
   constructor(public router:Router,
-    public alertController: AlertController) {
+    public alertController: AlertController, public userService:UsuariosService) {
       this.mostrar=true;
       this.valor=''
  } 
   ngOnInit() {
-
+    this.userService.obtenerUsuarios();
   }
  tab1ad(){
    this.router.navigate(['/tabs/tab1-ad'])

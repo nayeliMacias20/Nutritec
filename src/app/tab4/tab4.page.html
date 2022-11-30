@@ -2,51 +2,46 @@
   <ion-toolbar>
     <ion-searchbar [(ngModel)]="myInput"><ion-icon name="home-outline" (click)="home()"></ion-icon></ion-searchbar>
   </ion-toolbar>
-  <ion-title>
-    Mi progreso Nutritec
-   </ion-title>
 </ion-header>
 <ion-content [fullscreen]="true">
   <div class="contenedor">
-    <!--Logo-->
-    <img class="logo" src="../../assets/logo.png" alt="AppFitness">
-    <div class="miscalorias">
-      <h1 class="calorias">Mis calorias</h1>
-      <!--Mis calorias consumidas-->
-      <ion-item>
-        <ion-text color="tertiary">
-          <h3 class="calorias">Calorias Consumidas:</h3>
-        </ion-text>
-        <p class="conteo"> @Conteo</p>
+    <!--CARD DE DATOS PERSONALES-->
+    <ion-card>
+      <h1 class="perfil">Mi Perfil</h1>
+      <!--Logo-->
+      <img class="logo" src="../../assets/logo.png" alt="AppFitness">
+      <!--DATOS PERSONALES-->
+      <ion-item><!--*ngFor="let user of usersService.usuario.cont.usuario;">-->
+        <p>Nombre:<!--{{user.name}}--></p>
       </ion-item>
-    </div>
-    <ion-title>Administración de la cuenta</ion-title>
-    <ion-card class="cards">
-      <div class="users" *ngFor="let user of userService.users;">
-        <ion-item *ngIf="userService.users.length>=1">
-          <ion-card>
-            <p class="nombre">{{users.nombre}}</p>
-            <p class="correo">{{users.correo}}</p>
-          </ion-card>
-        </ion-item>
-      </div>
+      <ion-item>
+        <p>Email: <!--{{user.email}}--></p>
+      </ion-item>
+      <ion-item>
+        <p>Password:<!--{{user.pass}}--></p>
+      </ion-item>
+      <ion-item>
+        <p>Calorias Totales: <!--{{user.cal}}--></p>       
+      </ion-item>
     </ion-card>
-       <!--Aqui mostramos lo de las imagenes-->
+    <!--Manejar la versión vertical y horizontal-->
+    <ion-fab class="boton" vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button color="light" (click)="addNewImageGallery()">
+        <ion-icon name="camera"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <ion-card>
+      <!--Aqui mostramos lo de las imagenes-->
+      <h1 class="galeria">Mi Galeria Nutritec</h1>
     <ion-grid>
-      <ion-row>
+      <ion-row class="fotos">
         <ion-col size="6" *ngFor="let foto of fotoService.fotos; index as position">
           <ion-img [src]="foto.webviewPath"></ion-img>
         </ion-col>
       </ion-row>
     </ion-grid>
-    <ion-item>
-      <ion-icon name="person-circle" class="profil ve"></ion-icon>
-    </ion-item>
-    <!--Manejar la versión vertical y horizontal-->
-    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-      <ion-fab-button (click)="addNewImageGallery()">
-        <ion-icon name="camera"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
+    </ion-card>
+    
+
   </div>
 </ion-content>

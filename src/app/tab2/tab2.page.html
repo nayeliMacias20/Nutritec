@@ -3,27 +3,28 @@
     <ion-searchbar [(ngModel)]="myInput"><ion-icon name="home-outline" (click)="home()"></ion-icon></ion-searchbar>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-title>Comidas</ion-title>
+    <ion-title>Comidas <img style="width: 25px ;" src="../../assets/comida.png"> </ion-title>
+    <p></p>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <img class="image" src="./assets/Fondo3.jpg">
-  <ion-card class="cards">
-    <div class="diets" *ngFor="let dietas of adminService.dietas;">
-      <ion-item *ngIf="adminService.dietas.length>=1">
-        <ion-card class="card1" (click)="Alert()">
-          <p class="nombre">{{dietas.name}}</p>
-
-          <p class="description">{{dietas.description}}</p>
-        </ion-card>
+  <img class="image" src="./assets/dietas/comidas.jpg">
+  <div class="comi"*ngFor="let comida of comidasService.comidas.cont.comidas;" >
+    <ion-item > 
+      <ion-card class="card1" (click)="Alert()">
+        <p class="nombre">{{comida.name}}</p>
+      <ion-item>
+        <p class="ingredientes">{{comida.ingredientes}}</p>
+        <br>
+        <br>
       </ion-item>
-      <!--<ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
-        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
-        </ion-infinite-scroll-content>
-      </ion-infinite-scroll>
-      -->
+      </ion-card>
+    </ion-item>
     </div>
-  </ion-card>
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 </ion-content>
 

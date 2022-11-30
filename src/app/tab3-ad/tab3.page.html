@@ -1,12 +1,24 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-      <ion-searchbar></ion-searchbar>
+    <ion-searchbar [(ngModel)]="myInput"><ion-icon name="home-outline" (click)="home()"></ion-icon></ion-searchbar>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-title>Videos Youtube</ion-title>
+    <ion-title><img style="width: 30px ;" src="../../assets/youtube.png"> Dietas Saludables </ion-title>
   </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-
+  <div class="inicio">
+    <ion-card>
+      <ion-item>
+        <iframe width="360" height="215" src="https://www.youtube-nocookie.com/embed/dxH__2x0p-I?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </ion-item>
+      <p></p>
+      <ion-item>
+        <iframe width="360" height="215" src="https://www.youtube-nocookie.com/embed/bHy2DoIA6ik" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </ion-item>
+      <p></p>
+      <ion-item>
+        <iframe width="360" height="215" src="https://www.youtube.com/embed/CA6jWxS6qKg?start=3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </ion-item>
+    </ion-card>
+  </div>
 </ion-content>

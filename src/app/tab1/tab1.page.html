@@ -3,52 +3,60 @@
 <ion-content>
 
   <div class="inicio">
-    <ion-card>
-      <div class="dietas">
+    <!--INICIO-->
+    <ion-card class="dietas">
         <ion-card-header>
           <ion-card-title>Bienvenido a Nutritec</ion-card-title>
-          <img class="contact" src="../../assets/contact.png" alt="AppFitness">
-          <ion-card-subtitle> Aqui tienes tu resumen diario.</ion-card-subtitle>
+          <img class="contact" src="../../assets/logo.png" alt="AppFitness">
+          <ion-card-subtitle> Es el mejor momento de elegir tu dieta personalizada.</ion-card-subtitle>
         </ion-card-header>
-      </div>
-      
-      <ion-list>
-        <!--Calorias-->
-        <ion-item>
-          <ion-text color="tertiary">
-            <h3 class="calorias">Calorias Consumidas:</h3>
-          </ion-text>
-          <p class="conteo"> @Conteo</p>
-        </ion-item>
-        <!--Calorias-->
-        <!--Dietas-->
-        <div class="diets">
-          <ion-button class="buttona" expand="block" fill="outline" (click)="tab1ad()">
-            Desayuno
-            <ion-icon class="button1" slot="end" name="add-circle-outline"></ion-icon>
-          </ion-button>
-          <ion-button class="buttona" expand="block" fill="outline" (click)="tab2()">
-            Comida
-            <ion-icon class="button2" slot="end" name="add-circle-outline"></ion-icon>
-          </ion-button>
-          <ion-button class="buttona" expand="block" fill="outline" (click)="tab2ad()">
-            Cena
-            <ion-icon class="button3" slot="end" name="add-circle-outline"></ion-icon>
-          </ion-button>
-          <ion-button class="buttona" expand="block" fill="outline" (click)="tab3()">
-            Colaciones/Otros
-            <ion-icon class="button4" slot="end" name="add-circle-outline"></ion-icon>
-          </ion-button>
-        </div>
-        <ion-item>
-          <ion-text color="medium">
-            <h3>Videos de hoy</h3>
-          </ion-text>
-        </ion-item>
-        <ion-item>
-          <ion-button (click)="invokeVideoPlayer()">Start Video Player</ion-button>
-        </ion-item>
-      </ion-list>
+    </ion-card>
+    <!--DIETAS A ELEGIR-->
+    <ion-card>
+        <h1 class="misdietas">Mis Dietas</h1>
+        <ion-button class="buttona" expand="block" fill="outline" (click)="tab1ad()">
+          <img style="width: 25px ;" src="../../assets/desayuno.png">  
+            <p class="desayuno">Desayuno</p>
+          <ion-icon class="button1" slot="end" name="add-circle-outline"></ion-icon>
+        </ion-button>
+        <p></p>
+        <ion-button class="buttona" expand="block" fill="outline" (click)="tab2()">
+          <img style="width: 25px ;" src="../../assets/comida.png">  
+            <p class="comida">Comida</p>
+          <ion-icon class="button2" slot="end" name="add-circle-outline"></ion-icon>
+        </ion-button>
+        <p></p>
+        <ion-button class="buttona" expand="block" fill="outline" (click)="tab2ad()">
+          <img style="width: 25px ;" src="../../assets/cena.png">  
+            <p class="cena">Cena</p>
+          <ion-icon class="button3" slot="end" name="add-circle-outline"></ion-icon>
+        </ion-button>
+        <p></p>
+        <ion-button class="buttona" expand="block" fill="outline" (click)="tab3()">
+          <img style="width: 25px ;" src="../../assets/colaciones.png">  
+            <p class="colaciones">Colaciones/Otros</p>
+          <ion-icon class="button4" slot="end" name="add-circle-outline"></ion-icon>
+        </ion-button>
+        <p></p>
+        <br>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-text color="medium">
+          <h3 class="frase">Frase de hoy:</h3>
+          <h4 class="exito">El éxito llega cuando tus sueños superan tus excusas</h4>
+        </ion-text>
+      </ion-item>
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        <ion-text color="medium">
+          <h3 class="frase">Videos de hoy:</h3>
+        </ion-text>
+      </ion-item>
+      <ion-item>
+        <iframe width="300" height="200" src="https://www.youtube-nocookie.com/embed/dxH__2x0p-I?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </ion-item>
     </ion-card>
   </div>
 </ion-content>
