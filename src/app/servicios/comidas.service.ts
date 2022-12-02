@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class ComidasService {
   comidas:any;
   respuesta:any;
-  urlPeticionNode = "http://localhost:3000/api/comidas";
+  urlPeticionNode = "https://dcb-node-deploy-nayeli.herokuapp.com/api/comidas";
 
   constructor(public httpClient:HttpClient) { 
     this.comidas=[]

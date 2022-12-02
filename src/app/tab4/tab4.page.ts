@@ -10,7 +10,9 @@ import { UsuariosService } from '../servicios/usuarios.service';
   styleUrls: ['./tab4.page.scss'],
 })
 export class Tab4Page implements OnInit {
-
+  name: string
+  pass: string
+  email: string
 
 
   constructor(public router:Router,
@@ -27,7 +29,7 @@ export class Tab4Page implements OnInit {
  async ngOnInit() {
     //Crear usuario vacio
     //this.EditarDietas = {} as Dietas;
-    this.userService.obtenerUsuarios();
+    //this.userService.obtenerUsuarios();
     //Inicia y deja las fotos cargadas
     await this.fotoService.loadSaved();
   }
@@ -35,5 +37,7 @@ export class Tab4Page implements OnInit {
   home() {
     this.router.navigate(['/tabs/tab1'])
   }
-  
+  perfil(){
+    this.userService.obtenerUsuarios();
+  }
 }

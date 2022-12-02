@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class CenasService {
   cenas:any;
   respuesta:any;
-  urlPeticionNode = "http://localhost:3000/api/cenas";
+  urlPeticionNode = "https://dcb-node-deploy-nayeli.herokuapp.com/api/cenas";
 
   constructor(public httpClient:HttpClient) {
     this.cenas=[]

@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class DesayunosService {
   desayunos:any;
   respuesta:any;
-  urlPeticionNode = "http://localhost:3000/api/desayuno";
+  urlPeticionNode = "https://dcb-node-deploy-nayeli.herokuapp.com/api/desayuno";
 
   constructor(public httpClient:HttpClient) {
     this.desayunos=[]

@@ -11,11 +11,11 @@
       <!--Logo-->
       <img class="logo" src="../../assets/logo.png" alt="AppFitness">
       <!--DATOS PERSONALES-->
-      <ion-item><!--*ngFor="let user of usersService.usuario.cont.usuario;">-->
-        <p>Nombre:<!--{{user.name}}--></p>
+      <ion-item *ngFor="let user of userService.users" ><!--*ngFor="let user of usersService.usuario.cont.usuario;">-->
+        <p>Nombre:<!--{{user.pass}}--></p>
       </ion-item>
       <ion-item>
-        <p>Email: <!--{{user.email}}--></p>
+        <p>Email:<!--{{user.pass}}--></p>
       </ion-item>
       <ion-item>
         <p>Password:<!--{{user.pass}}--></p>

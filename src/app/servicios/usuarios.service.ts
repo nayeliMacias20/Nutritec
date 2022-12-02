@@ -9,16 +9,16 @@ export class UsuariosService {
   usuarios: any;
   respuesta: any;
   usuario: any;
-  urlPeticionNode = "http://localhost:3000/api/user";
+  urlPeticionNode = "https://dcb-node-deploy-nayeli.herokuapp.com/api/user";
 
   constructor(public httpClient: HttpClient, public router: Router) {
     this.usuarios = []
     this.respuesta = []
     this.usuario = {}
   }
- //Login el usuario
+  //Login el usuario
   login(email, password) {
-    this.httpClient.post('http://localhost:3000/api/login', { email, password }).subscribe((res: any) => {
+    this.httpClient.post('https://dcb-node-deploy-nayeli.herokuapp.com/api/login', { email, password }).subscribe((res: any) => {
       if (res.ok) {
         this.router.navigate(['/tabs/tab1'])
       } else {
@@ -39,8 +39,18 @@ export class UsuariosService {
       }
     )
   }
-  registrarUsuario() {
+  registrarUsuario(){
     this.httpClient.post(this.urlPeticionNode, this.usuario).subscribe(
+      res => {
+        this.respuesta = res;
+      },
+      err => {
+        console.log("Hubo un error", err)
+      }
+    )
+  }
+  actualizarUsuario(name, email, password) {
+    this.httpClient.put(this.urlPeticionNode, { name, email, password }).subscribe(
       res => {
         this.respuesta = res;
       },
