@@ -9,17 +9,21 @@ export class UsuariosService {
   usuarios: any;
   respuesta: any;
   usuario: any;
+  usuariosesion: any;
   urlPeticionNode = "https://dcb-node-deploy-nayeli.herokuapp.com/api/user";
 
   constructor(public httpClient: HttpClient, public router: Router) {
     this.usuarios = []
     this.respuesta = []
     this.usuario = {}
+    this.usuariosesion = {}
   }
   //Login el usuario
   login(email, password) {
     this.httpClient.post('https://dcb-node-deploy-nayeli.herokuapp.com/api/login', { email, password }).subscribe((res: any) => {
       if (res.ok) {
+        this.usuariosesion = res;
+        console.log(this.usuariosesion);
         this.router.navigate(['/tabs/tab1'])
       } else {
         alert('Bad request');
@@ -27,18 +31,18 @@ export class UsuariosService {
     })
   }
 
-  obtenerUsuarios() {
-    this.httpClient.get(this.urlPeticionNode).subscribe(
-      //this.httpClient.get<any>(this.urlPeticionNode).subscribe(
-      res => {
-        this.usuario = res
-        console.log(res);
-      },
-      err => {
-        console.log("Hubo un error", err);
-      }
-    )
-  }
+  //obtenerUsuarios() {
+    //this.httpClient.get(this.urlPeticionNode).subscribe(
+    //  //this.httpClient.get<any>(this.urlPeticionNode).subscribe(
+    //  res => {
+    //    this.usuario = res
+    //    console.log(res);
+    //  },
+    //  err => {
+    //    console.log("Hubo un error", err);
+    //  }
+    //)
+  //}
   registrarUsuario(){
     this.httpClient.post(this.urlPeticionNode, this.usuario).subscribe(
       res => {
