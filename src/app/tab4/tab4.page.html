@@ -12,17 +12,16 @@
       <img class="logo" src="../../assets/logo.png" alt="AppFitness">
       <!--DATOS PERSONALES-->
       <ion-item >
-        <!--*ngFor="let user of usersService.usuario.cont.usuario;">-->
-        <p>Nombre:{{usuario.name}}</p>
+        <ion-icon name="person-outline"></ion-icon><p>Nombre: {{usuariosesion.usrDB.name}}</p>
       </ion-item>
       <ion-item>
-        <p>Email:<!--{{user.pass}}--></p>
+        <ion-icon name="mail-outline"></ion-icon><p>Email: {{usuariosesion.usrDB.email}}</p>
       </ion-item>
       <ion-item>
-        <p>Password:<!--{{user.pass}}--></p>
+        <ion-icon name="key-outline"></ion-icon> <p>Password: ********** </p>
       </ion-item>
       <ion-item>
-        <p>Calorias Totales: <!--{{user.cal}}--></p>       
+        <ion-icon name="fast-food-outline"></ion-icon><p>Calorias Totales: {{usuariosesion.usrDB.caloriastotales}}</p>       
       </ion-item>
     </ion-card>
     <!--Manejar la versión vertical y horizontal-->

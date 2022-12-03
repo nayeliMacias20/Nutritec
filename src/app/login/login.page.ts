@@ -12,6 +12,7 @@ export class LoginPage implements OnInit {
   name: string
   pass: string
   email: string
+  calorias: string
   mostrar: boolean
   valor: string
   us: any
@@ -69,7 +70,7 @@ export class LoginPage implements OnInit {
   //   this.pass = null;
   // }
   async singup() {
-    if (this.name == null || this.pass == null || this.email == null) {
+    if (this.name == null || this.pass == null || this.email == null || this.calorias == null) {
       const alert = await this.alertController.create({
         cssClass: 'my-custom-class',
         header: 'ERROR',
@@ -82,6 +83,8 @@ export class LoginPage implements OnInit {
       this.userService.usuario.name = this.name;
       this.userService.usuario.password = this.pass;
       this.userService.usuario.email = this.email;
+      this.userService.usuario.caloriastotales =  this.calorias;
+    
 
       this.userService.registrarUsuario()
       const alert = await this.alertController.create({
@@ -97,6 +100,7 @@ export class LoginPage implements OnInit {
       this.name = null;
       this.email = null;
       this.pass = null;
+      this.calorias = null;
     }
   }
 }

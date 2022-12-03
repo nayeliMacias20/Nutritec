@@ -16,14 +16,16 @@ export class Tab1Page {
   mostrar:boolean;
   valor:string
   name:string
+  usuariosesion: any
 
   constructor(public router:Router,
     public alertController: AlertController, public userService:UsuariosService) {
       this.mostrar=true;
       this.valor=''
+      this.usuariosesion = userService.usuariosesion;
  } 
   ngOnInit() {
-    this.userService.obtenerUsuarios();
+    console.log(this.usuariosesion);
   }
  tab1ad(){
    this.router.navigate(['/tabs/tab1-ad'])
